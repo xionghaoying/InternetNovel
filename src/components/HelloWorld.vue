@@ -84,12 +84,21 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'HelloWorld',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  computed: {
+    ...mapState({
+      js: state => state.a.js
+    })
+  },
+  mounted () {
+    console.log(this.js)
   }
 }
 </script>
